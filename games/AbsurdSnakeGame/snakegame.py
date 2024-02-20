@@ -4,10 +4,11 @@ import random as rd
 def mainLoop(): 
     snakeX = 2
     snakeY = 3
-    gameX = 10
-    gameY = 5
-    grid = Grid(gameX, gameY)
+    gameX = 20
+    gameY = 20
     
+    grid = Grid(gameX, gameY)
+    grid.replace('#', snakeX, snakeY)
     while True:
      
         grid.print()
@@ -18,13 +19,13 @@ def mainLoop():
         grid.replace('#', snakeX, snakeY)
         match movement:
             case 'up':
-                snakeY += 1 if gameY >snakeY >0
+                snakeY += 1 
             case 'down':
-                snakeY -= 1 if gameY >snakeY >0
+                snakeY -= 1 
             case 'right':
-                snakeX += 1 if gameX >snakeX >0
+                snakeX += 1 
             case 'left':
-                snakeX -= 1 if gameX >snakeX >0
+                snakeX -= 1 
 
                 
         
