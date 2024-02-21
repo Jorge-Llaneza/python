@@ -16,7 +16,7 @@ def mainLoop():
         movement = getInput()
         os.system('clear')
         
-        grid.replace('#', snakeX, snakeY)
+
         match movement:
             case 'up':
                 snakeY += 1 
@@ -26,17 +26,15 @@ def mainLoop():
                 snakeX += 1 
             case 'left':
                 snakeX -= 1 
-
-                
-        
-        
+        grid.replace('#', snakeX, snakeY)
+    
 class Grid:
     grid =[]    
     def __init__(self, gridX, gridY):
         
         grid = []
         row = []
-        
+                    
         for y in range(gridY):
             for x in range(gridX):
                 row.append('·')
@@ -77,7 +75,6 @@ def getInput():
             print('lololo')
             return char
         except KeyError:
-            print('error')
             char = ''
 
 def endGame():
